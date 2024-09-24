@@ -1,0 +1,122 @@
+/* Background image for the body */
+body {
+    background-image: url('../images/bg2.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh;   /* Ensure it takes full viewport height */
+}
+
+/* Title styling */
+#title2 {
+    margin-top: 100px; /* Increased margin to push title lower */
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333;
+}
+
+@font-face {
+    font-family: Strawberry;
+    src: url(/StrawberryFields.ttf);
+}
+
+/* Container for the search form */
+#searchDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 30%;
+    background-color: rgb(223, 248, 248);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    padding: 20px;
+    margin-top: 50px; /* Space above the search form */
+}
+
+#searchDiv:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon styling */
+.fa-search {
+    font-size: 40px;
+    margin: 20px;
+    color: gold;
+    border-radius: 50%;
+    background-color: #2a9bcf;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Input styling */
+input[type="text"] {
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 17px;
+}
+
+/* Button styling */
+.buttons {
+    font-size: 15px;
+    border-radius: 30px;
+    width: 60%;
+    text-align: center;
+    font-family: Strawberry, sans-serif;
+    border: 2px solid rgb(255, 255, 255);
+    color: #2a9bcf;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.buttons:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+    color: #FFFFFF;
+    opacity: 90%;
+}
+
+/* Result message styling */
+#contactSearchResult {
+    display: inline-block;
+    font-size: 1em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+    color: #95060a; /* Color for error or result messages */
+}
+
+/* Table styling for search results */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}

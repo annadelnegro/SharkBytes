@@ -1,0 +1,204 @@
+/* Background image for the body */
+body {
+    background-image: url('../images/bg2.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh;   /* Ensure it takes full viewport height */
+}
+
+@font-face {
+    font-family: Strawberry;
+    src: url(/StrawberryFields.ttf);
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(../Comfortaa-Bold.ttf);
+}
+
+#contactAddResult {
+    font-family: Comfortaa;
+}
+
+/* Title styling */
+#title2 {
+    margin-top: 10%;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333;
+    animation: entrance-opacity 1s ease-in-out;
+}
+
+/* Container for the add contact form */
+#loginDiv2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto; /* Adjusted height to fit content */
+    text-align: center;
+    border-radius: 10px;
+    width: 500px;
+    background-color: rgb(223, 248, 248);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    padding-bottom: 30px; /* Increased padding to fit content */
+    margin-top: 50px; /* Increased margin to push form lower */
+    animation: zoom-in 1s ease-in-out;
+}
+
+#loginDiv2:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes entrance-opacity {
+
+    from{ 
+        opacity: 0%;
+    }
+    
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes zoom-in {
+    0%{
+        transform: scale(.8);
+    }
+
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+/* Icon styling */
+.fa-right-to-bracket {
+    font-size: 30px;
+    margin: 20px;
+    color: gold;
+    border-radius: 50%;
+    background-color: #2a9bcf;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    font-family: Comfortaa;
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 15px; /* Space between inputs */
+}
+
+/* Button styling */
+.buttons {
+    font-size: 25px;
+    border-radius: 30px;
+    width: 60%;
+    text-align: center;
+    font-family: Comfortaa;
+    border: 2px solid rgb(255, 255, 255);
+    color: #2a9bcf;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#goBackButton, #contactButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#goBackButton img, #contactButton img {
+    width: 40px;
+    height: auto;
+}
+
+#goBackButton {
+    margin-left: 0;
+}
+
+#contactButton {
+    margin-right: 0;
+}
+
+.buttons:hover {
+    background-color: #00d5124f;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+
+
+#inner-title {
+    margin: 40px;
+    padding: 0px 50px;
+    border-radius: 10px;
+    border: 2px solid #69bae0;
+    display: inline-block;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: white; 
+    background-color: #2a9bcf; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.2s, color 0.5s; 
+  }
+
+  #inner-title:hover {
+    background-color: #FFD700; 
+    color: #69bae0; 
+    border: 2px solid #FFD700;
+  }
+
+
+  .login-container {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s; 
+}
+
+.login-container.active {
+    display: block;
+    opacity: 1;
+}
+
+
+
+/* Result message styling */
+#loginResult {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+    color: #95060a;
+}

@@ -1,0 +1,269 @@
+body 
+{
+    background-image: url(../images/bg2.jpg);
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    width: 100%;
+    height:auto;
+}
+
+@font-face {
+    font-family: Strawberry;
+    src: url(/StrawberryFields.ttf);
+}
+
+.bg-image{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0px;
+    z-index: -11;
+}
+
+.bg-image img{
+    width: 100%;
+    height: 100vh;
+}
+
+#loginDiv
+{
+    margin: auto auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 30%;
+
+}
+
+.fa-right-to-bracket {
+    font-size: 40px;
+    margin: 20px;
+    color: gold;
+    border-radius: 50%;
+    background-color: #2a9bcf;
+    padding: 15px ;
+    margin-bottom: 25px;
+}
+
+.img{
+    width: 100%;
+    text-align: center;
+  
+}
+
+#loggedInDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    display: inline;
+}
+
+#loginDiv2 input::placeholder {
+    color: #8ecae6; 
+    font-style: italic; 
+    opacity: 1; 
+}
+
+#accessUIDiv
+{
+    font-size: 30px;
+    width: 70%;
+    margin-left: 15%;
+    padding: 25px;
+    background-color: #b2b2b2;
+}
+
+.buttons
+{
+    font-size: 30px;
+    border-radius: 25px;
+    width: 45%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid white;
+    color: #2a9bcf;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.buttons:hover{
+    background-color: #00d5124f;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+
+#loginName
+{
+
+	font-size: 30px;
+}
+#loginPassword
+{
+
+	font-size: 30px;
+}
+#searchText
+{
+    border: 2px solid white;
+	font-size: 30px;
+}
+#colorText
+{
+	font-size: 30px;
+}
+
+input[type="text"],input[type="password"]{
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid white;
+
+}
+
+
+span#inner-title {
+    margin: 0%;
+}
+
+.register-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+}
+
+#inner-title {
+    margin: 40px;
+    padding: 18px 50px;
+    border-radius: 10px;
+    border: 2px solid gold;
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333; 
+    background-color: #F7DC6F; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.5s, color 0.5s; 
+  }
+  
+  #inner-title:hover {
+    background-color: #FFD700; 
+    color: white; 
+  }
+
+#loginResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+    color: #95060a;
+}
+
+#userName{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#logoutButton{
+    width: 20%;
+    margin-left: 40%;
+}
+
+select{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 2%;
+    font-size: 0.75em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#colorSearchResult{
+    display: none;
+}
+
+#colorAddResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Strawberry, sans-serif;
+}
+
+.new-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.new-title h2 {
+    color: #0d0351e9;
+    font-size: 4em;
+    position:absolute;
+}
+
+.new-title h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #0d0351e9;
+}
+
+.new-title h2:nth-child(2) {
+    color: rgb(32, 107, 246);
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%);
+    }
+}

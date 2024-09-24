@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SharkBytes</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles_login.css" rel="stylesheet">	
+    <link rel="icon" type="images/x-icon" href="/images/shark2.png">
+    
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cc27f65909.js" crossorigin="anonymous"></script>
+
+    <!-----GOOGLE FONT LINK------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <h1 id="title2">Welcome</h1>
+    <h2 id="title3">SharkBytes-Contacts</h2>
+    
+    <div id="loginDiv2" class="reveal">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <div id="input-placeholder">
+            <i class="fa fa-user"></i> 
+            <input type="text" id="loginName" placeholder="Username"  required/><br />
+
+        </div>
+      
+        <div id="input-placeholder">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="loginPassword" placeholder="Password" required/><br />
+        </div>
+   
+
+
+        <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">
+            <img src="lock.png" id="lockIcon" alt="Show Password" width="20px">
+        </button>
+
+        <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Log In </button>
+        <span id="loginResult"></span>
+
+        <a href="forgotPassword.html" id="forgotPassword">
+            <p>forgot password?</p>
+        </a>
+    </div>
+</body>
+</html>

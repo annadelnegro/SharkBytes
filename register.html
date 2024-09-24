@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SharkBytes</title>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/registration.js"></script>
+    <link href="css/styles_register.css" rel="stylesheet">	
+    <link rel="icon" type="images/x-icon" href="/images/shark2.png">
+    
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cc27f65909.js" crossorigin="anonymous"></script>
+
+    <!-----GOOGLE FONT LINK------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <h1 id="title2">Welcome to SharkBytes</h1>
+    
+    <div id="loginDiv2">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <input type="text" id="registerFirstName" placeholder="First Name"/><br />
+
+        <input type="text" id="registerLastName" placeholder="Last Name"/><br />
+
+        <input type="text" id="registerName" placeholder="Create Username" maxlength="14"/><br />
+
+        <input type="password" id="registerPassword" placeholder="Password"/><br />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password"/><br />
+
+        <button type="button" id="togglePassword" onclick="togglePasswordsVisibility()">
+            <img src="lock.png" id="lockIcon" alt="Show Passwords" width="20px">
+        </button>
+
+        <div id="passwordHelp" class="password-requirements">
+            Your password must contain:
+            <ul>
+                <li>One uppercase letter</li>
+                <li>One number</li>
+            </ul>
+        </div>
+
+        <label for="securityQuestion" id="securityQuestionLabel">Select a Security Question</label>
+        <select id="securityQuestion">
+            <option value="" disabled selected>Select</option>
+            <option value="What was your first pet's name?">What was your first pet's name?</option>
+            <option value="What is your mother's maiden name?">What is your mother's maiden name?</option>
+            <option value="What is the city you dream of visiting?">What is the city you dream of visiting?</option>
+            <option value="What is the name of the city you were born?">What is the name of the city you were born?</option>
+        </select><br />
+        <input type="text" id="securityAnswer" placeholder="Answer" /><br />
+
+        <button type="button" id="registerButton" class="buttons" onclick="doRegister();">Sign Up!</button>
+        <span id="registerResult"></span>
+        <div class="login-container"><a href="login.html"><span id="inner-title">LOG IN </span></a></div>
+    </div>
+</body>
+</html>

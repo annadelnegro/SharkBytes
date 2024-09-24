@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Welcome</title>
+    <script type="text/javascript" src="js/code.js"></script>
+    <link href="css/styles_dashboard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="icon" type="images/x-icon" href="/images/shark2.png">
+    <script src="https://kit.fontawesome.com/cc27f65909.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="contactList(); readCookie();">
+
+	<div class="background">
+	
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		
+	
+	 </div>
+
+    <h1 id="title-dashboard">Dashboard</h1>
+
+    <div class="dash-container">
+
+        <div class="sidebar">
+            <a href="contact.html"><i class="fa-solid fa-plus"></i></a>
+            <div id="loggedInDiv">
+                <i class="fa-solid fa-arrow-right-from-bracket" onclick="doLogout();"></i>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input 
+                        onkeyup="searchContacts()" 
+                        type="text" 
+                        name="search" 
+                        id="searchInput" 
+                        placeholder="Search from Contacts"
+                        class="search-input">
+                </div>
+                <div id="searchResult"></div>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="title-contact">Name</th>
+                            <th id="title-contact">Phone #</th>
+                            <th id="title-contact">Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>Phone #</td>
+                            <td>Email</td>
+                            <td class="update">
+                                <i class="fa-solid fa-pencil"></i>
+                      
+                                <i class="fa-solid fa-trash"></i>
+                            </td>
+                        </tr>
+                        <!-- Additional rows here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <i class="pagination-button fa-solid fa-arrow-left" id="prevPage" onclick="changePage(-1)" aria-label="Previous Page"></i>
+                <span id="pageInfo">Page 1</span>
+                <i class="pagination-button fa-solid fa-arrow-right" id="nextPage" onclick="changePage(1)" aria-label="Next Page"></i>
+            </div>             
+        </div>
+
+        <div class="sidebar" style="background-color: transparent"></div>
+            
+        </div>
+    </div>
+
+    <div id="contactResult"></div>
+
+  
+</body>
+
+</html>

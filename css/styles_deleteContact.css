@@ -1,0 +1,106 @@
+/* Background image for the body */
+body {
+    background-image: url('../images/bg2.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    min-height: 100vh;   /* Ensure it takes full viewport height */
+}
+
+/* Font face for custom font */
+@font-face {
+    font-family: Strawberry;
+    src: url('/StrawberryFields.ttf');
+}
+
+/* Title styling */
+#title2 {
+    margin-top: 100px; /* Increased margin to push title lower */
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333;
+}
+
+/* Container for the delete form */
+#deleteDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 250px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 25%;
+    background-color: rgb(223, 248, 248);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    padding-bottom: 50px;
+    margin-top: 50px; /* Increased margin to push form lower */
+}
+
+#deleteDiv:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon styling */
+.fa-trash {
+    font-size: 40px;
+    margin: 20px;
+    color: gold;
+    border-radius: 50%;
+    background-color: #2a9bcf;
+    padding: 15px;
+    cursor: pointer; /* Ensure cursor changes to pointer */
+}
+
+.fa-trash:hover {
+    cursor: pointer; /* Ensure cursor changes on hover */
+}
+
+/* Input styling */
+input[type="number"] {
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid white;
+    padding: 10px;
+    font-size: 17px;
+}
+
+/* Button styling */
+.buttons {
+    font-size: 15px;
+    border-radius: 30px;
+    width: 60%;
+    text-align: center;
+    font-family: Strawberry, sans-serif;
+    border: 2px solid rgb(255, 255, 255);
+    color: #2a9bcf;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.buttons:hover {
+    background-color: #00d5124f;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+
+/* Result message styling */
+#deleteResult {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+    color: #95060a;
+}

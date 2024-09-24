@@ -1,0 +1,134 @@
+/* styles_updateContact.css */
+
+/* Background image for the body */
+body {
+    background-image: url('../images/bg2.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Font face for custom font */
+@font-face {
+    font-family: Strawberry;
+    src: url('/StrawberryFields.ttf');
+}
+
+/* Title styling */
+#title2 {
+    margin-top: 80px;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333;
+    animation: entrance-opacity 1s ease-in-out;
+}
+
+/* Container for the update contact form */
+#updateDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 450px;
+    margin: 1% auto;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 20%;
+    background-color: rgb(223, 248, 248);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    animation: zoom-in 1s ease-in-out;
+}
+
+#updateDiv:hover {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+@keyframes entrance-opacity {
+
+    from{ 
+        opacity: 0%;
+    }
+    
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes zoom-in {
+    0%{
+        transform: scale(.8);
+    }
+
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* Icon styling */
+.fa-user-edit {
+    font-size: 30px;
+    margin: 15px;
+    color: gold;
+    border-radius: 50%;
+    background-color: #2a9bcf;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Input styling */
+input[type="number"],
+input[type="text"],
+input[type="email"] {
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid white;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.buttons {
+    font-size: 14px;
+    border-radius: 20px;
+    width: 50%;
+    text-align: center;
+    font-family: Strawberry, sans-serif;
+    border: 2px solid rgb(255, 255, 255);
+    color: #2a9bcf;
+    font-style: italic;
+    margin-bottom: 10px;
+    cursor: pointer; /* Ensure cursor changes */
+}
+
+.buttons:hover {
+    background-color: #00d5124f;
+    color: #FFFFFF;
+    opacity: 50%;
+    cursor: pointer; /* Ensure cursor changes on hover */
+}
+
+/* Result message styling */
+#updateResult {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+    color: #95060a;
+}

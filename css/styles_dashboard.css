@@ -1,0 +1,501 @@
+body 
+{
+    margin: 0;
+    background-image: url(../images/bg2.jpg);
+    background-size: cover;
+}
+
+@font-face {
+    font-family: Strawberry;
+    src: url(../StrawberryFields.ttf);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.pagination {
+    font-family: Comfortaa; /* Apply the same font as the table text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-button-disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.pagination i {
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+    margin: 0 15px;
+    color: gold; /* Keep icon color consistent */
+}
+
+
+
+i{
+    color: gold;
+    font-size: 23px !important;
+    margin: 5px;
+    padding: 20px;
+    border: solid 2px #034352;
+    border-radius:50%;
+    background-color: #033652;
+    transition: background-color transparent; 
+}
+
+
+
+.search-bar i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; 
+    color: #8ecae6; /* Light blue to match placeholder */
+    background-color: transparent;
+    border: none;
+}
+
+.search-bar i:hover{
+    border: none;
+}
+
+i:hover {
+    background-color: #000204;
+    border: solid 2px gold;
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-button.export {
+    background-color: #ffcccc;
+}
+
+.icon-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    margin: 40px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.5em;
+    color: white;
+}
+
+h1 input {
+    font-size: 1em;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+}
+
+.next-button {
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    background-color: #e6e6b8;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-dashboard {
+    padding-top: 80px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: Strawberry;
+    color: #333;
+    animation: zoom-in 1s ease-in-out;
+}
+
+.dash-container {
+    display: flex; /* Maintain row layout */
+    justify-content: center; /* Center contents horizontally */
+    align-items: center; /* Align items at the top */
+    width: 100%; /* Full width */
+}
+
+.sidebar {
+    width: 100px; /* Fixed width */
+    background-color: rgba(10, 96, 157, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    justify-content: center; /* Center contents horizontally */
+    animation: reveal2 1s ease-in-out;
+}
+
+.table-container {
+    background: rgba(153, 243, 246, 0.8);
+    width: 80%; /* Relative width */
+    max-width: 800px; /* Optional maximum width */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 635px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+    animation: reveal 1s ease-in-out;
+}
+
+.table-wrapper {
+    flex: 1 1 auto;
+}
+
+table {  
+    font-family: Comfortaa;
+    font-size: 15px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-radius: 30px;
+    white-space: nowrap;
+}
+
+th,
+td {
+    text-align: left;
+    border: 2px solid rgb(75, 190, 232);
+    text-align: center;
+    border-radius: 10px; 
+    background: #a4e9ec;
+}
+
+/* Set a fixed width and height for the Update and Delete buttons */
+td.update,
+td.delete {
+    /*width: 50px; /* Adjust as needed */
+    height: 50px; /* Make it square */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center text */
+}
+
+td.update i,
+td.delete i {
+    font-size: 20px; /* Adjust icon size as needed */
+    line-height: 50px; /* Center icon vertically */
+}
+
+.update, .delete {
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height to make them square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update i, .delete i {
+    font-size: 20px; /* Adjust icon size if needed */
+    color: gold; /* Change color to match your design */
+}
+
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(/Comfortaa-Bold.ttf);
+}
+
+.contact-info {
+    padding: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+#title-contact {
+    font-size: 17px;
+    white-space: nowrap;
+    padding: 20px;
+    overflow: hidden;
+}
+
+thead {
+    color: black;
+}
+
+thead tr {
+    font-family: Strawberry;
+    color: #333;
+}
+
+thead th {
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody td {
+    color: #333;
+}
+
+tfoot {
+    background-color: #f9f9f9;
+    text-align: right;
+}
+
+tfoot td {
+    padding: 10px;
+    font-weight: bold;
+}
+
+tfoot td.total {
+    background-color: #e0e0e0;
+    border-top: 2px solid #ddd;
+}
+
+/* Log out button */
+#loggedInDiv {
+    text-align: center;
+}
+
+.buttons {
+    font-size: 30px;
+    border-radius: 25px;
+    width: 200px;
+    text-align: center;
+    font-family: Comfortaa;
+    border: 2px solid white;
+    color: #ff3b3b;
+    margin-bottom: 10px;
+    transition: background-color 0.2s, color 0.5s; 
+}
+
+.buttons:hover {
+    background-color: gold;
+    color: #FFFFFF;
+    opacity: 100%;
+}
+
+
+/* Container to center the search bar horizontally */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+/* Styling for the search bar container */
+.search-bar {
+    width: 300px; 
+    position: relative;
+   
+    
+}
+
+.search-bar i {
+    position: absolute;
+    left: -5px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #8ecae6;
+    background-color: transparent;
+}
+
+/* Styling for the search input */
+.search-input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 20px;
+    padding: 0 40px 0 60px; /* Padding adjusted for icon */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.search-input::placeholder {
+    font-size: 16px;
+    font-family: Comfortaa;
+    color: #8ecae6;
+    font-style: italic;
+    opacity: 1;
+}
+
+
+
+
+@keyframes zoom-in {
+    0%{
+        transform: scale(.8);
+    }
+
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateX(20%); /* Start from the right */
+        opacity: 0; /* Initially hidden */
+    }
+
+    50% {
+        transform: translateX(-1%); /* Slight overshoot for effect */
+        opacity: 1; /* Start becoming visible */
+    }
+
+    100% {
+        transform: translateX(0); /* Final position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes reveal2 {
+    0% {
+        transform: translateX(-50%); 
+        opacity: 0; 
+    }
+
+    50% {
+        transform: translateX(-1%); 
+        opacity: 1; 
+    }
+
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+@keyframes floatUp {
+    0% {
+        transform: translate3d(0, 100vh, 0) scale(0.5);
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -100vh, 0) scale(1);
+        opacity: 0.3;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: radial-gradient(
+        rgba(135, 206, 235, 0.4), /* Light blue for ocean surface */
+        rgba(0, 0, 139, 0.4) /* Dark blue for ocean depth */
+      ); /* Background color  b3d3eb*/
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background span {
+    position: absolute;
+    width: 15vmin;
+    height: 15vmin;
+    background: rgba(255, 255, 255, 0.4); /* Semi-transparent white for bubbles */
+    border-radius: 50%; /* Make the shapes circular */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add a slight glow */
+    animation: floatUp infinite linear;
+    animation-duration: 50s;
+}
+
+.background span:nth-child(1) {
+    top: 80%;
+    left: 50%;
+    animation-duration: 10s;
+    transform-origin: -5vw -5vh;
+}
+
+.background span:nth-child(2) {
+    top: 70%;
+    left: 70%;
+    animation-duration: 12s;
+    transform-origin: -10vw -10vh;
+}
+
+.background span:nth-child(3) {
+    top: 50%;
+    left: 30%;
+    animation-duration: 8s;
+    transform-origin: -20vw -20vh;
+}
+
+.background span:nth-child(4) {
+    top: 60%;
+    left: 80%;
+    animation-duration: 11s;
+    transform-origin: 5vw 5vh;
+}
+
+.background span:nth-child(5) {
+    top: 40%;
+    left: 40%;
+    animation-duration: 9s;
+    transform-origin: 15vw -10vh;
+}
+
+.background span:nth-child(6) {
+    top: 30%;
+    left: 10%;
+    animation-duration: 13s;
+    transform-origin: -25vw 15vh;
+}
+
+.background span:nth-child(7) {
+    top: 20%;
+    left: 90%;
+    animation-duration: 10s;
+    transform-origin: -30vw -20vh;
+}
+
+.background span:nth-child(8) {
+    top: 10%;
+    left: 20%;
+    animation-duration: 10s;
+    transform-origin: 20vw -5vh;
+}
