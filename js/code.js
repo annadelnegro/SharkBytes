@@ -180,10 +180,6 @@ function doLogin() {
 
 }
 
-
-
-
-
 function doRegister() {
 
 	let username = document.getElementById("registerName").value;
@@ -402,47 +398,6 @@ function deleteContact(contactId) {
     }
 }
 
-function deleteContactOLD() {
-    // Collect the contact ID from the input field
-    let contactId = document.getElementById("contactId").value;
-	
-    // Clear any previous result messages
-    document.getElementById("deleteResult").innerHTML = "";
-
-    // Prepare JSON payload
-    let tmp = { contactId: contactId };
-    let jsonPayload = JSON.stringify(tmp);
-
-    let url = urlBase + '/deleteContact.' + extension;
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-
-    xhr.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                // Handle success
-                let response = JSON.parse(xhr.responseText);
-                if (response.error) {
-                    document.getElementById("deleteResult").innerHTML = "Error: " + response.error;
-                } else {
-                    document.getElementById("deleteResult").innerHTML = "Contact has been deleted";
-                }
-            } else {
-                // Handle error
-                document.getElementById("deleteResult").innerHTML = "Error: " + this.statusText;
-            }
-        }
-    };
-    
-    try {
-        xhr.send(jsonPayload);
-    } catch (err) {
-        document.getElementById("deleteResult").innerHTML = "Error: " + err.message;
-    }
-}
-
 function searchContacts() {
     readCookie();
     let query = document.getElementById("searchInput").value.trim();
@@ -480,7 +435,8 @@ function searchContacts() {
                     console.log("Parsed server response:", response);
 
                     if (response.error) {
-                        displayContacts([]);//if no contacts contain the substring
+                        allContacts = [];
+                        displayContacts();//if no contacts contain the substring
                         return;
                     }
 
@@ -489,6 +445,9 @@ function searchContacts() {
 
                     if (Array.isArray(results) && results.length > 0) {
                         allContacts = results
+                        displayContacts(); // Assuming displayContacts can handle the array correctly
+                    } else if (Array.isArray(results) && results.length == 0) {
+                        allContacts = [];
                         displayContacts(); // Assuming displayContacts can handle the array correctly
                     } else {
                         document.getElementById("searchResult").innerHTML = "No contacts found.";
