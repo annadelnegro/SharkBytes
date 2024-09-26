@@ -95,6 +95,11 @@ function changePage(direction) {
     const totalPages = Math.ceil(allContacts.length / contactsPerPage);
     currentPage += direction;
 
+    if (allContacts.length < 1) {
+        currentPage = 1;
+        totalPages = 1;
+    }
+
     if (currentPage < 1) {
         currentPage = 1;
     } else if (currentPage > totalPages) {
@@ -107,6 +112,8 @@ function changePage(direction) {
 // Update pagination info
 function updatePaginationInfo() {
     const totalPages = Math.ceil(allContacts.length / contactsPerPage);
+
+    print(allContacts.length);
     
     //Remove the disable class from the pagination buttons
     let buttons = document.getElementsByClassName("pagination-button")
@@ -122,12 +129,17 @@ function updatePaginationInfo() {
         buttons[1].classList.add("pagination-button-disabled");
     }
 
-    document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
+    if (totalPages == 1){
+        buttons[0].classList.add("pagination-button-disabled");
+        buttons[1].classList.add("pagination-button-disabled");
+    }
 
-    /*
-    document.getElementById('prevPage').disabled = (currentPage === 1);
-    document.getElementById('nextPage').disabled = (currentPage === totalPages);
-    */
+    document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
+    /*if (currentPage == 1 && allContacts.length === 0){
+        buttons[0].classList.add("pagination-button-disabled");
+        buttons[1].classList.add("pagination-button-disabled");
+        document.getElementById('pageInfo').innerText = `Page 1 of 1`;
+    } */
 }
 
 function doLogin() {
@@ -167,7 +179,6 @@ function doLogin() {
 
 				saveCookie(firstName, lastName, userId);
 				window.location.href = "dashboard.html";
-
 
 			}
 		};
