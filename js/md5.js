@@ -254,7 +254,7 @@
   function rstr2binl(input) {
     var i
     var output = []
-    output[(input.length >> 2) - 1] = undefined
+    output[(input.length >> 2) - 1] = question
     for (i = 0; i < output.length; i += 1) {
       output[i] = 0
     }

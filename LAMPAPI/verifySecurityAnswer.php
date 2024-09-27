@@ -11,25 +11,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 $inData = getRequestInfo();
 $username = $inData["login"];
+$userAnswer = $inData["securityAnswer"];
 
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("SELECT ID, SecurityQuestion, SecurityAnswer FROM Users WHERE Login=?");
+    $stmt = $conn->prepare("SELECT SecurityAnswer FROM Users WHERE Login=?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $id = $row['ID'];
-        $securityQuestion = $row['SecurityQuestion'];
-        $hashedSecurityAnswer = $row['SecurityAnswer'];
+        $hashedAnswer = $row['SecurityAnswer'];
 
-        returnWithSecurityInfo($id, $securityQuestion, $hashedSecurityAnswer);
+        if (password_verify($userAnswer, $hashedAnswer)) {
+            returnWithSuccess("Security answer verified");  // Send success response
+        } else {
+            error_log("Incorrect security answer");
+            returnWithError("Incorrect security answer.");
+        }
     } else {
-        returnWithError("Username not found");
+        returnWithError("User not found.");
     }
 
     $stmt->close();
@@ -49,13 +53,13 @@ function sendResultInfoAsJson($obj)
 
 function returnWithError($err)
 {
-    $retValue = '{"id":0,"securityQuestion":"","securityAnswer":"","error":"' . $err . '"}';
+    $retValue = json_encode(["error" => $err]);
     sendResultInfoAsJson($retValue);
 }
 
-function returnWithSecurityInfo($id, $securityQuestion, $hashedSecurityAnswer)
+function returnWithSuccess($mes)
 {
-    $retValue = '{"id":' . $id . ',"securityQuestion":"' . $securityQuestion . '","securityAnswer":"' . $hashedSecurityAnswer . '","error":""}';
+    $retValue = json_encode(["message" => $mes]);
     sendResultInfoAsJson($retValue);
 }
 

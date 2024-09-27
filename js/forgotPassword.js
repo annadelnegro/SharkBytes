@@ -29,7 +29,6 @@ function findMe() {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let jsonObject = JSON.parse(xhr.responseText);
-                console.log(jsonObject);
 
                 if(jsonObject.error !== ""){
                     document.getElementById("findMeResult").innerHTML = jsonObject.error;
@@ -58,12 +57,35 @@ function changeLayout() {
 function doVerify() {
     let securityAns = document.getElementById("securityAns").value;
 
-    if (securityAns == securityAnswer) {
-        document.getElementById("answerVerify").style.display = "none";
-        document.getElementById("changePass").style.display = "flex";
-    }
-    else {
-        document.getElementById("tryAgain").innerHTML = "Try again";
+    let tmp = {
+        login: username,
+        securityAnswer: securityAns
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+    let url = urlBase + '/verifySecurityAnswer.' + extension;
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+    try {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let jsonObject = JSON.parse(xhr.responseText);
+
+                if (jsonObject.error) {
+                    document.getElementById("tryAgain").innerHTML = jsonObject.error;
+                    return;
+                }
+
+                document.getElementById("answerVerify").style.display = "none";
+                document.getElementById("changePass").style.display = "flex";
+            }
+        };
+        xhr.send(jsonPayload);
+    } catch (err) {
+        console.log(err.message);
     }
 }
 

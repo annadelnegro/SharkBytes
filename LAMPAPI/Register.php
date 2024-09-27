@@ -44,7 +44,7 @@ $hashedPassword = password_hash($inData["password"], PASSWORD_DEFAULT);
 $firstName = $inData["firstName"];
 $lastName = $inData["lastName"];
 $securityQuestion = $inData["securityQuestion"];
-$securityAnswer = $inData["securityAnswer"];
+$securityAnswer = password_hash($inData["securityAnswer"], PASSWORD_DEFAULT);
 
 
 $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 
