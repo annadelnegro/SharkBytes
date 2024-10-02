@@ -95,9 +95,9 @@ function changePage(direction) {
     const totalPages = Math.ceil(allContacts.length / contactsPerPage);
     currentPage += direction;
 
-    if (allContacts.length < 1) {
+    if (allContacts.length < 5) {
         currentPage = 1;
-        totalPages = 1;
+        totalPages = 0;
     }
 
     if (currentPage < 1) {
@@ -113,8 +113,6 @@ function changePage(direction) {
 function updatePaginationInfo() {
     const totalPages = Math.ceil(allContacts.length / contactsPerPage);
 
-    print(allContacts.length);
-    
     //Remove the disable class from the pagination buttons
     let buttons = document.getElementsByClassName("pagination-button")
     for (let btn of buttons) {
@@ -134,12 +132,17 @@ function updatePaginationInfo() {
         buttons[1].classList.add("pagination-button-disabled");
     }
 
+    if (allContacts.length < 1) {
+        currentPage = 1;
+        totalPages = 1;
+    }
+    
     document.getElementById('pageInfo').innerText = `Page ${currentPage} of ${totalPages}`;
-    /*if (currentPage == 1 && allContacts.length === 0){
-        buttons[0].classList.add("pagination-button-disabled");
-        buttons[1].classList.add("pagination-button-disabled");
-        document.getElementById('pageInfo').innerText = `Page 1 of 1`;
-    } */
+
+    /*
+    document.getElementById('prevPage').disabled = (currentPage === 1);
+    document.getElementById('nextPage').disabled = (currentPage === totalPages);
+    */
 }
 
 function doLogin() {
@@ -179,6 +182,7 @@ function doLogin() {
 
 				saveCookie(firstName, lastName, userId);
 				window.location.href = "dashboard.html";
+
 
 			}
 		};
@@ -318,7 +322,7 @@ function addContact() {
 	}
 
     if (!isValidPhoneNumber(phone)) {
-        document.getElementById("contactAddResult").innerHTML = "Invalid phone number format. Please use xxx-xxx-xxxx.";
+        document.getElementById("contactAddResult").innerHTML = "Invalid phone number format. Please use XXX-XXX-XXXX.";
         return;
     }
 
@@ -489,6 +493,17 @@ function updateContact() {
     let contactPhone = document.getElementById("contactPhone").value;
     let contactEmail = document.getElementById("contactEmail").value;
 
+    if (!isValidPhoneNumber(contactPhone)) {
+        document.getElementById("updateResult").innerHTML = "Invalid phone number format. Please use XXX-XXX-XXXX.";
+        return;
+    }
+
+    if (!isValidEmail(contactEmail)) {
+        document.getElementById("updateResult").innerHTML = "Invalid email format.";
+        return;
+    }
+
+
     // Clear any previous result messages
     document.getElementById("updateResult").innerHTML = "";
 
@@ -554,4 +569,16 @@ function togglePasswordVisibility() {
         passwordInput.type = "password";
         lockIcon.src = "lock.png"; // Change back to locked icon
     }
+}
+
+function activateImages() {
+    const images = document.querySelectorAll('.background img');
+    images.forEach(img => {
+        img.classList.add('active');
+    });
+}
+
+function printAndActivate() {
+    activateImages(); // Activate images
+ // Trigger the print dialog
 }
